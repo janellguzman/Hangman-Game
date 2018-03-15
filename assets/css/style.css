@@ -6,4 +6,12 @@ body {
 
 heading {
     color: silver;
+    font-family: 'Bangers', cursive;
+    font-size: 32px;
+}
+
+#instructions, #game, #stats, #guesses {
+    color: green;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
 }
