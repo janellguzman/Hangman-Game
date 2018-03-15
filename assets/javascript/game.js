@@ -1,12 +1,12 @@
 // GLOBAL VARIABLES //
 
-// Define words that computer will select from
-var wordsList = ["mario", "luigi", "princess", "bowser", "yoshi", "toadstool"];
+// define words that computer will select from
+var wordsList = ["leonardo", "raphael", "michelangelo", "donatello", "splinter", "shredder", "bebop", "rocksteady", "krang", "slash", "leatherhead"];
 
-// Define alphabet letters that user can pick from
+// define alphabet letters that user can pick from
 var alphabetLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-// Set the initial global variables
+// set the initial global variables
 var wins = 0;
 var losses = 0;
 // guessesLeft is how many attempts user has remaining in the round
@@ -15,7 +15,7 @@ var guessesLeft = 12;
 var guessesSoFar = [];
 // userGuess is what the user picks by pressing a key
 var userGuess = null;
-// Have computer pick a word and store it in wordToBeGuessed
+// have computer pick a word and store it in wordToBeGuessed
 var wordToBeGuessed = wordsList[Math.floor(Math.random() * wordsList.length)];
 // arrayFromWord is an array that will hold the letters of the wordToBeGuessed
 var arrayFromWord = [];
@@ -66,7 +66,7 @@ function resetGame() {
 	document.querySelector("#instructions").innerHTML = htmlInstructions;
 	var htmlGameInitial = "<p><h1>";
     // lets also populate initial game layout of dashes on the document, but to do so we have to build the string for every character
-    // in the word, place an underscore and a space and for every space in the word, place two spaces
+    // in the word, place an underscore and a space and for every space in the word
 	for (var i = 0; i < wordToBeGuessed.length; i++) {
 		if (wordToBeGuessed.charAt(i) == " ") {
 			htmlGameInitial += "&nbsp;&nbsp;";
@@ -74,7 +74,7 @@ function resetGame() {
 			htmlGameInitial += "_&nbsp;";
 		}
 	}
-	// remember to include h1 and p1 header open and close
+	
 	htmlGameInitial += "</h1></p>"
 	document.querySelector("#game").innerHTML = htmlGameInitial;
 	var htmlStats = "<p><h3>" + "Wins: " + wins + " Guesses Left : " + guessesLeft + "</h3></p>";
@@ -128,7 +128,7 @@ function validateUserGuess() {
 	// array pair from false to true
 	for (var i = 0; i < arrayFromWord.length; i++) {
 		if (arrayFromWord[i] === userGuess) {
-			// if the letter wasn't previously guessed then play woohoo
+			// if the letter wasn't previously guessed
 			if (arrayFromWord[i+1] == false) {
 					}
 			arrayFromWord[i+1] = true;
